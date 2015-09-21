@@ -16,5 +16,12 @@ namespace Pract2SisOpe
         {
             InitializeComponent();
         }
+
+        List<Proceso> Lis_Monedas = new List<Proceso>();
+
+        private void buttonBlock_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

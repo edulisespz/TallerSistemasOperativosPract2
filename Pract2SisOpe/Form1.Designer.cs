@@ -136,6 +136,7 @@
             this.buttonBlock.TabIndex = 10;
             this.buttonBlock.Text = "Bloquear";
             this.buttonBlock.UseVisualStyleBackColor = true;
+            this.buttonBlock.Click += new System.EventHandler(this.buttonBlock_Click);
             // 
             // buttonError
             // 
