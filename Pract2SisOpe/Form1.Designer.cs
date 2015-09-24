@@ -41,6 +41,7 @@
             this.buttonBlock = new System.Windows.Forms.Button();
             this.buttonError = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +63,7 @@
             // 
             // textBoxNuevos
             // 
+            this.textBoxNuevos.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxNuevos.Location = new System.Drawing.Point(16, 256);
             this.textBoxNuevos.Multiline = true;
             this.textBoxNuevos.Name = "textBoxNuevos";
@@ -146,6 +148,7 @@
             this.buttonError.TabIndex = 11;
             this.buttonError.Text = "Error";
             this.buttonError.UseVisualStyleBackColor = true;
+            this.buttonError.Click += new System.EventHandler(this.buttonError_Click);
             // 
             // buttonSalir
             // 
@@ -156,11 +159,22 @@
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(416, 400);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.TabIndex = 13;
+            this.buttonStart.Text = "Comenzar";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 454);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.buttonError);
             this.Controls.Add(this.buttonBlock);
@@ -176,6 +190,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +212,7 @@
         private System.Windows.Forms.Button buttonBlock;
         private System.Windows.Forms.Button buttonError;
         private System.Windows.Forms.Button buttonSalir;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
 

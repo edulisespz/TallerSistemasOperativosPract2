@@ -1,2 +1,10 @@
 c:\users\zaragozaalpha\documents\visual studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\bin\Debug\Pract2SisOpe.exe.config
 C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\bin\Debug\Pract2SisOpe.exe.config
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\bin\Debug\Pract2SisOpe.exe
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\bin\Debug\Pract2SisOpe.pdb
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.csprojResolveAssemblyReference.cache
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.Form1.resources
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.Properties.Resources.resources
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.csproj.GenerateResource.Cache
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.exe
+C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.pdb

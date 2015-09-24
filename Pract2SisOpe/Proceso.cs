@@ -6,9 +6,27 @@ using System.Threading.Tasks;
 
 namespace Pract2SisOpe
 {
-    class Proceso
+    public class Proceso
     {
-        int Identificador;
-        int Tiempo_servicio;
+        public int Identificador;
+        public int Tiempo_servicio;
+        public string TipoMoneda;
+
+
+        public Proceso()
+        {
+            
+
+        }
+
+
+        public Proceso(Proceso InObj )
+        {
+            this.Identificador = InObj.Identificador;
+            this.Tiempo_servicio = InObj.Tiempo_servicio;
+            this.TipoMoneda = InObj.TipoMoneda;
+        }
+        
+        
     }
 }
