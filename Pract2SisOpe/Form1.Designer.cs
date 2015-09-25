@@ -58,7 +58,7 @@
             this.textBoxListos.Location = new System.Drawing.Point(16, 39);
             this.textBoxListos.Multiline = true;
             this.textBoxListos.Name = "textBoxListos";
-            this.textBoxListos.Size = new System.Drawing.Size(124, 169);
+            this.textBoxListos.Size = new System.Drawing.Size(151, 169);
             this.textBoxListos.TabIndex = 1;
             // 
             // textBoxNuevos
@@ -84,7 +84,7 @@
             this.textBoxBloque.Location = new System.Drawing.Point(207, 256);
             this.textBoxBloque.Multiline = true;
             this.textBoxBloque.Name = "textBoxBloque";
-            this.textBoxBloque.Size = new System.Drawing.Size(124, 169);
+            this.textBoxBloque.Size = new System.Drawing.Size(150, 169);
             this.textBoxBloque.TabIndex = 5;
             // 
             // label3
@@ -199,20 +199,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxListos;
-        private System.Windows.Forms.TextBox textBoxNuevos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxBloque;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxTerminados;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxEjecuta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonBlock;
-        private System.Windows.Forms.Button buttonError;
-        private System.Windows.Forms.Button buttonSalir;
-        private System.Windows.Forms.Button buttonStart;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBoxListos;
+        public System.Windows.Forms.TextBox textBoxNuevos;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox textBoxBloque;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBoxTerminados;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox textBoxEjecuta;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Button buttonBlock;
+        public System.Windows.Forms.Button buttonError;
+        public System.Windows.Forms.Button buttonSalir;
+        public System.Windows.Forms.Button buttonStart;
+
     }
 }
 

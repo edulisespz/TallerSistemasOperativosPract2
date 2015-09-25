@@ -9,8 +9,9 @@ namespace Pract2SisOpe
     public class Proceso
     {
         public int Identificador;
-        public int Tiempo_servicio;
+        public int Tiempo_servicio { get; set; }
         public string TipoMoneda;
+
 
 
         public Proceso()

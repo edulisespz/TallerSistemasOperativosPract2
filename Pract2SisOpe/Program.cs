@@ -18,8 +18,7 @@ namespace Pract2SisOpe
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            //Form1 X = new Form1();
-            //X.PrincipalInit();
+            
         }
     }
 }

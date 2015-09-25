@@ -8,3 +8,11 @@ C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperati
 C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.csproj.GenerateResource.Cache
 C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.exe
 C:\Users\edgarulises\Documents\Visual Studio 2013\Projects\TallerSistemasOperativosPract2\Pract2SisOpe\obj\Debug\Pract2SisOpe.pdb
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.exe
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.pdb
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\bin\Debug\Pract2SisOpe.exe
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\bin\Debug\Pract2SisOpe.pdb
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.csprojResolveAssemblyReference.cache
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.Form1.resources
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.Properties.Resources.resources
+C:\Users\ZaragozaAlpha\Documents\Visual Studio 2013\Projects\Taller Sistemas Operativos\Pract2SisOpe\obj\Debug\Pract2SisOpe.csproj.GenerateResource.Cache
