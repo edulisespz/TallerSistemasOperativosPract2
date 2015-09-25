@@ -199,7 +199,8 @@ namespace Pract2SisOpe
                     //List_Listos.Add(Lis_Monedas.ElementAt(0));
                     //Lis_Monedas.RemoveAt(0);
 
-                    Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Listos.ElementAt(j).TipoMoneda + "Tiempo: " + List_Listos.ElementAt(j).Tiempo_servicio + Environment.NewLine;
+                    Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Listos.ElementAt(j).TipoMoneda 
+                        + "Tiempo: " + List_Listos.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                     textBoxListos.Text = Aux1Textbox;
 
 
@@ -246,7 +247,8 @@ namespace Pract2SisOpe
                         //List_Listos.Add(Lis_Monedas.ElementAt(0));
                         //Lis_Monedas.RemoveAt(0);
 
-                        Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Bloqueados.ElementAt(j).TipoMoneda + "Tiempo: " + List_Bloqueados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
+                        Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Bloqueados.ElementAt(j).TipoMoneda 
+                            + "Tiempo: " + List_Bloqueados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                         textBoxBloque.Text = Aux1Textbox;
 
 
