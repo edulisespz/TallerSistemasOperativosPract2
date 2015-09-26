@@ -29,7 +29,9 @@ namespace Pract2SisOpe
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            PrincipalInit();
+            
+                PrincipalInit();
+            
         }
 
         
@@ -194,12 +196,12 @@ namespace Pract2SisOpe
 
                 List_Listos.OrderBy(o => o.Tiempo_servicio).ToList();
 
-                for (j = 0; j < List_Listos.Count && j < 5; j++)//listos
+                for (j = 0; j < List_Listos.Count && j < 5-bloqueados; j++)//listos
                 {
                     //List_Listos.Add(Lis_Monedas.ElementAt(0));
                     //Lis_Monedas.RemoveAt(0);
 
-                    Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Listos.ElementAt(j).TipoMoneda 
+                    Aux1Textbox = Aux1Textbox + "- " + List_Listos.ElementAt(j).Identificador + " " + List_Listos.ElementAt(j).TipoMoneda 
                         + "Tiempo: " + List_Listos.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                     textBoxListos.Text = Aux1Textbox;
 
@@ -222,12 +224,21 @@ namespace Pract2SisOpe
                 Ejecutado = new Proceso(List_Listos.ElementAt(0));
                 List_Listos.RemoveAt(0);
                 Flistos--;
-
+                i = 0;
                 for (x = 0; (x < Ejecutado.Tiempo_servicio && (ActionBlock == false && ActionEnd == false)); x++) //Core Important
                 {
                     System.Threading.Thread.Sleep(1000);
                     textBoxEjecuta.Text = "id: " + Ejecutado.Identificador + Environment.NewLine +
                         " " + Ejecutado.TipoMoneda + "Tiempo: " + Ejecutado.Tiempo_servicio + Environment.NewLine;
+                    i++;
+                    if (i == 2 && List_Bloqueados.Count!=0)
+                    {
+                        
+                        List_Listos.Add(List_Bloqueados.ElementAt(0));
+                        List_Bloqueados.RemoveAt(0);
+                        i = 0;
+                        textBoxBloque.Text = "";
+                    }
 
                 }
                 if (x == Ejecutado.Tiempo_servicio)
@@ -247,7 +258,7 @@ namespace Pract2SisOpe
                         //List_Listos.Add(Lis_Monedas.ElementAt(0));
                         //Lis_Monedas.RemoveAt(0);
 
-                        Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Bloqueados.ElementAt(j).TipoMoneda 
+                        Aux1Textbox = Aux1Textbox + "- " + List_Bloqueados.ElementAt(j).Identificador + " " + List_Bloqueados.ElementAt(j).TipoMoneda 
                             + "Tiempo: " + List_Bloqueados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                         textBoxBloque.Text = Aux1Textbox;
 
@@ -261,7 +272,7 @@ namespace Pract2SisOpe
                 {
                     
                     aux2term_textbox = textBoxTerminados.Text;
-                    aux2term_textbox = aux2term_textbox + " " + Ejecutado.TipoMoneda + Ejecutado.Tiempo_servicio + Environment.NewLine;
+                    aux2term_textbox = aux2term_textbox + "id: "+ Ejecutado.Identificador + " " + Ejecutado.TipoMoneda + Ejecutado.Tiempo_servicio + Environment.NewLine;
                     textBoxTerminados.Text = aux2term_textbox;
                     ActionEnd = false;
                 }
@@ -282,6 +293,26 @@ namespace Pract2SisOpe
         {
             ActionEnd = true;
 
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Aux1Textbox = "";
+            for (j = 0; j < List_Terminados.Count; j++)//listos
+            {
+                //List_Listos.Add(Lis_Monedas.ElementAt(0));
+                //Lis_Monedas.RemoveAt(0);
+                textBoxSalida.Visible = true;
+                Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Terminados.ElementAt(j).TipoMoneda
+                    + "Tiempo: " + List_Terminados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
+               textBoxSalida.Text = Aux1Textbox;
+            }
+            MessageBox.Show("termino");
+
+            ActionEnd = true;
+
+
+            this.Close();
         }
 
         

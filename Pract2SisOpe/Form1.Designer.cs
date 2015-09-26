@@ -42,6 +42,7 @@
             this.buttonError = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.textBoxSalida = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -158,6 +159,7 @@
             this.buttonSalir.TabIndex = 12;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // buttonStart
             // 
@@ -169,11 +171,21 @@
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
+            // textBoxSalida
+            // 
+            this.textBoxSalida.Location = new System.Drawing.Point(155, 138);
+            this.textBoxSalida.Multiline = true;
+            this.textBoxSalida.Name = "textBoxSalida";
+            this.textBoxSalida.Size = new System.Drawing.Size(398, 164);
+            this.textBoxSalida.TabIndex = 14;
+            this.textBoxSalida.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 454);
+            this.ClientSize = new System.Drawing.Size(742, 459);
+            this.Controls.Add(this.textBoxSalida);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.buttonError);
@@ -213,6 +225,7 @@
         public System.Windows.Forms.Button buttonError;
         public System.Windows.Forms.Button buttonSalir;
         public System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.TextBox textBoxSalida;
 
     }
 }
