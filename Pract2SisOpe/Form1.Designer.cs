@@ -173,10 +173,11 @@
             // 
             // textBoxSalida
             // 
-            this.textBoxSalida.Location = new System.Drawing.Point(155, 138);
+            this.textBoxSalida.Location = new System.Drawing.Point(63, 13);
             this.textBoxSalida.Multiline = true;
             this.textBoxSalida.Name = "textBoxSalida";
-            this.textBoxSalida.Size = new System.Drawing.Size(398, 164);
+            this.textBoxSalida.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSalida.Size = new System.Drawing.Size(410, 434);
             this.textBoxSalida.TabIndex = 14;
             this.textBoxSalida.Visible = false;
             // 

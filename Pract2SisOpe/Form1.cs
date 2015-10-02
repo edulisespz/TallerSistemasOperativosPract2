@@ -20,6 +20,7 @@ namespace Pract2SisOpe
         public Form1()
         {
             InitializeComponent();
+            llenarLista();
 
             timer.Tick += new EventHandler(timer_Tick); // Everytime timer ticks, timer_Tick will be called
             timer.Interval = (1000) * (1);              // Timer will tick evert second
@@ -51,6 +52,10 @@ namespace Pract2SisOpe
 
         string Aux1Textbox = "";
         string aux2term_textbox = "";
+
+
+        //round robins
+        int cuantum = 3;
 
 
 
@@ -176,7 +181,7 @@ namespace Pract2SisOpe
             
             
 
-            llenarLista();
+            //llenarLista();
 
             //inicio while tentativo
             
@@ -193,15 +198,17 @@ namespace Pract2SisOpe
 
                 Flistos = temp;
                 temp = 0;
-
-                List_Listos.OrderBy(o => o.Tiempo_servicio).ToList();
+                
+                /*
+                List_Listos.OrderBy(o => o.Tiempo_servicio).ToList();//importante ordenamiento
+                */
 
                 for (j = 0; j < List_Listos.Count && j < 5-bloqueados; j++)//listos
                 {
                     //List_Listos.Add(Lis_Monedas.ElementAt(0));
                     //Lis_Monedas.RemoveAt(0);
 
-                    Aux1Textbox = Aux1Textbox + "- " + List_Listos.ElementAt(j).Identificador + " " + List_Listos.ElementAt(j).TipoMoneda 
+                    Aux1Textbox = Aux1Textbox + "id- " + List_Listos.ElementAt(j).Identificador + " " + List_Listos.ElementAt(j).TipoMoneda 
                         + "Tiempo: " + List_Listos.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                     textBoxListos.Text = Aux1Textbox;
 
@@ -225,25 +232,48 @@ namespace Pract2SisOpe
                 List_Listos.RemoveAt(0);
                 Flistos--;
                 i = 0;
-                for (x = 0; (x < Ejecutado.Tiempo_servicio && (ActionBlock == false && ActionEnd == false)); x++) //Core Important
+                for (x = 0; (x < Ejecutado.Tiempo_servicio && (ActionBlock == false && ActionEnd == false)); x++) //Core Important, "procesador"
                 {
                     System.Threading.Thread.Sleep(1000);
                     textBoxEjecuta.Text = "id: " + Ejecutado.Identificador + Environment.NewLine +
                         " " + Ejecutado.TipoMoneda + "Tiempo: " + Ejecutado.Tiempo_servicio + Environment.NewLine;
                     i++;
-                    if (i == 2 && List_Bloqueados.Count!=0)
+
+                    if (x == cuantum)
+                    {
+                        Ejecutado.Tiempo_servicio -= cuantum;
+                        List_Bloqueados.Add(Ejecutado);
+                        break;
+                    }
+
+                    else if (i == 2 && List_Bloqueados.Count!=0)
                     {
                         
-                        List_Listos.Add(List_Bloqueados.ElementAt(0));
+                        List_Listos.Insert(4,List_Bloqueados.ElementAt(0));//posicion 4 por stetica, no importa tanto al codigo
                         List_Bloqueados.RemoveAt(0);
                         i = 0;
                         textBoxBloque.Text = "";
+                        bloqueados--;
+                        break;
+                    }
+
+                    for (j = 0; j < List_Bloqueados.Count; j++)//Bloqueados
+                    {
+                        //List_Listos.Add(Lis_Monedas.ElementAt(0));
+                        //Lis_Monedas.RemoveAt(0);
+
+                        Aux1Textbox = Aux1Textbox + "- " + List_Bloqueados.ElementAt(j).Identificador + " " + List_Bloqueados.ElementAt(j).TipoMoneda
+                            + "Tiempo: " + List_Bloqueados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
+                        textBoxBloque.Text = Aux1Textbox;
+
+
                     }
 
                 }
                 if (x == Ejecutado.Tiempo_servicio)
                 {
                     List_Terminados.Add(Ejecutado);
+                    Flistos++;
                     ActionEnd = true;
                 }
 
@@ -251,14 +281,15 @@ namespace Pract2SisOpe
 
                 if (ActionBlock)
                 {
+                    Ejecutado.Tiempo_servicio -= cuantum;
                     List_Bloqueados.Add(Ejecutado);
 
-                    for (j = 0; j < List_Bloqueados.Count; j++)//listos
+                    for (j = 0; j < List_Bloqueados.Count; j++)//Bloqueados
                     {
                         //List_Listos.Add(Lis_Monedas.ElementAt(0));
                         //Lis_Monedas.RemoveAt(0);
 
-                        Aux1Textbox = Aux1Textbox + "- " + List_Bloqueados.ElementAt(j).Identificador + " " + List_Bloqueados.ElementAt(j).TipoMoneda 
+                        Aux1Textbox = Aux1Textbox + "id- " + List_Bloqueados.ElementAt(j).Identificador + " " + List_Bloqueados.ElementAt(j).TipoMoneda 
                             + "Tiempo: " + List_Bloqueados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                         textBoxBloque.Text = Aux1Textbox;
 
@@ -270,7 +301,8 @@ namespace Pract2SisOpe
                 }
                 if (ActionEnd)
                 {
-                    
+
+                    List_Terminados.Add(Ejecutado);   
                     aux2term_textbox = textBoxTerminados.Text;
                     aux2term_textbox = aux2term_textbox + "id: "+ Ejecutado.Identificador + " " + Ejecutado.TipoMoneda + Ejecutado.Tiempo_servicio + Environment.NewLine;
                     textBoxTerminados.Text = aux2term_textbox;
@@ -298,12 +330,12 @@ namespace Pract2SisOpe
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             Aux1Textbox = "";
-            for (j = 0; j < List_Terminados.Count; j++)//listos
+            for (j = 0; j < List_Terminados.Count; j+=2)//listos
             {
                 //List_Listos.Add(Lis_Monedas.ElementAt(0));
                 //Lis_Monedas.RemoveAt(0);
                 textBoxSalida.Visible = true;
-                Aux1Textbox = Aux1Textbox + "- " + (j + 1) + " " + List_Terminados.ElementAt(j).TipoMoneda
+                Aux1Textbox = Aux1Textbox + "ID- " + List_Terminados.ElementAt(j).Identificador + " " + List_Terminados.ElementAt(j).TipoMoneda
                     + "Tiempo: " + List_Terminados.ElementAt(j).Tiempo_servicio + Environment.NewLine;
                textBoxSalida.Text = Aux1Textbox;
             }
@@ -311,8 +343,8 @@ namespace Pract2SisOpe
 
             ActionEnd = true;
 
-
-            this.Close();
+            timer.Stop();
+            //this.Close();
         }
 
         
