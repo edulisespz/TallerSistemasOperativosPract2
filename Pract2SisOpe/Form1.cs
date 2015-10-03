@@ -272,7 +272,7 @@ namespace Pract2SisOpe
                 }
                 if (x == Ejecutado.Tiempo_servicio)
                 {
-                    List_Terminados.Add(Ejecutado);
+                    //List_Terminados.Add(Ejecutado); no se porque puse esto
                     Flistos++;
                     ActionEnd = true;
                 }
@@ -330,7 +330,7 @@ namespace Pract2SisOpe
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             Aux1Textbox = "";
-            for (j = 0; j < List_Terminados.Count; j+=2)//listos
+            for (j = 0; j < List_Terminados.Count; j++)//listos
             {
                 //List_Listos.Add(Lis_Monedas.ElementAt(0));
                 //Lis_Monedas.RemoveAt(0);

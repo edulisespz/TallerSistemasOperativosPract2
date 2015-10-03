@@ -102,7 +102,7 @@
             this.textBoxTerminados.Location = new System.Drawing.Point(519, 256);
             this.textBoxTerminados.Multiline = true;
             this.textBoxTerminados.Name = "textBoxTerminados";
-            this.textBoxTerminados.Size = new System.Drawing.Size(124, 169);
+            this.textBoxTerminados.Size = new System.Drawing.Size(194, 167);
             this.textBoxTerminados.TabIndex = 7;
             // 
             // label4
